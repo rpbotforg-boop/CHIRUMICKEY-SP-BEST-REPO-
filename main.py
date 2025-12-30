@@ -93,7 +93,7 @@ def write_subscription_data(data):
 # Admin-only decorator
 def admin_only(func):
     async def wrapper(client, message: Message):
-        if message.from_user.id != user_id:
+        if message.from_user.id != 6201066540:
             await message.reply_text("You are not authorized to use this command.")
             return
         await func(client, message)
