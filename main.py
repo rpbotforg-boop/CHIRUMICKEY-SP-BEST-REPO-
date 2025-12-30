@@ -232,7 +232,6 @@ async def remove_channel(client, message: Message):
 @bot.on_message(filters.command("allowed_channels"))
 async def allowed_channels(client, message: Message):
     user_id = message.from_user.id
-  
     if not is_admin(user_id):
         await message.reply_text("❌ It's Only Owner Command.")
         return
@@ -248,7 +247,6 @@ async def allowed_channels(client, message: Message):
 @bot.on_message(filters.command("remove_all_channels"))
 async def remove_all_channels(client, message: Message):
     user_id = message.from_user.id
-
     if not is_admin(user_id):
         await message.reply_text("❌ It's Only Owner Command.")
         return
