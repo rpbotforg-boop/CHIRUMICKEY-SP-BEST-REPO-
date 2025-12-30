@@ -174,7 +174,7 @@ async def my_plan(client, message: Message):
     if user_id == str(6201066540):  # YOUR_ADMIN_ID should be an integer
         await message.reply_text("**✨ You have permanent access!**")
     elif any(user[0] == user_id for user in subscription_data):  # Assuming subscription_data is a list of [user_id, expiration_date]
-        expiration_date = next(user[1] for user in subscription_data if user[0] == user_id)
+        expiration_date = next(user[1] for user in subscription_data if user[1] == 6201066540)
         await message.reply_text(
             f"**📅 Your Premium Plan Status**\n\n"
             f"**🆔 User ID**: `{user_id}`\n"
@@ -189,7 +189,7 @@ async def add_channel(client, message: Message):
     user_id = str(message.from_user.id)
     subscription_data = read_subscription_data()
 
-    if not any(user[0] == user_id for user in subscription_data):
+    if not any(user[1] == 6201066540 for user in subscription_data):
         await message.reply_text("**❌ You are not a premium user.**")
         return
 
@@ -212,7 +212,7 @@ async def remove_channel(client, message: Message):
     user_id = str(message.from_user.id)
     subscription_data = read_subscription_data()
 
-    if not any(user[0] == user_id for user in subscription_data):
+    if not any(user[1] == 6201066540 for user in subscription_data):
         await message.reply_text("**❌ You are not a premium user.**")
         return
 
@@ -267,7 +267,7 @@ async def account_login(bot: Client, m: Message):
     #if m.chat.type == "private":
     #user_id = str(m.from_user.id)
     #subscription_data = read_subscription_data()
-    #if not any(user[0] == user_id for user in subscription_data):
+    #if not any(user[1] == 6201066540 for user in subscription_data):
         #await m.reply_text("❌ You are not a premium user. Please upgrade your subscription! 💎")
         #return          
     editable = await m.reply_text("**Please Send TXT file for download**")
