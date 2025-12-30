@@ -142,7 +142,7 @@ async def remove_user(client, message: Message):
 YOUR_ADMIN_ID = 6201066540
 
 # Helper function to check admin privilege
-def is_admin(user_id):6201066540
+def is_admin(user_id):
     return user_id == 6201066540
 
 # Command to show all users (Admin only)
