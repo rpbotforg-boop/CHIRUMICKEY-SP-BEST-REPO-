@@ -112,7 +112,7 @@ async def id_command(client, message: Message):
     )
 
 
-# 1. /adduser
+# 1./adduser
 @bot.on_message(filters.command("adduser") & filters.private)
 @admin_only
 async def add_user(client, message: Message):
@@ -126,7 +126,7 @@ async def add_user(client, message: Message):
         await message.reply_text("Invalid command format. Use: /adduser <user_id> <expiration_date>")
 
 
-# 2. /removeuser
+# 2./removeuser
 @bot.on_message(filters.command("removeuser") & filters.private)
 @admin_only
 async def remove_user(client, message: Message):
@@ -142,7 +142,7 @@ async def remove_user(client, message: Message):
 YOUR_ADMIN_ID = 6201066540
 
 # Helper function to check admin privilege
-def is_admin(user_id):
+def is_admin(user_id):6201066540
     return user_id == 6201066540
 
 # Command to show all users (Admin only)
